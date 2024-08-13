@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ececec;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .calculator {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .display {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            padding: 20px;
+            text-align: right;
+            font-size: 2em;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1px;
+        }
+
+        .btn {
+            background: #f1f1f1;
+            border: 1px solid #ddd;
+            padding: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .btn:active {
+            background-color: #ccc;
+            box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn.operator {
+            background: linear-gradient(135deg, #f57c00, #ff9800);
+            color: #fff;
+        }
+
+        .btn.operator:hover {
+            background: linear-gradient(135deg, #ff5722, #f44336);
+        }
+
+        .btn.operator:active {
+            background: linear-gradient(135deg, #e64a19, #d32f2f);
+        }
+
+        .btn.double {
+            grid-column: span 2;
+        }
+
+        .btn.zero {
+            grid-column: span 2;
+        }
+
+        .btn.clear {
+            background: #ff1744;
+            color: #fff;
+        }
+
+        .btn.clear:hover {
+            background: #d50032;
+        }
+
+        .btn.clear:active {
+            background: #b71c1c;
+        }
+
+        .btn.equals {
+            background: #00c853;
+            color: #fff;
+        }
+
+        .btn.equals:hover {
+            background: #00e676;
+        }
+
+        .btn.equals:active {
+            background: #00c853;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn clear" onclick="clearDisplay()">C</button>
+            <button class="btn operator" onclick="appendToDisplay('/')">/</button>
+            <button class="btn operator" onclick="appendToDisplay('*')">*</button>
+            <button class="btn operator" onclick="appendToDisplay('-')">-</button>
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn equals" onclick="calculateResult()">=</button>
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn zero" onclick="appendToDisplay('0')">0</button>
+            <button class="btn" onclick="appendToDisplay('.')">.</button>
+            
+        </div>
+    </div>
+    <script>
+        function clearDisplay() {
+            document.getElementById('display').innerText = '0';
+        }
+
+        function appendToDisplay(value) {
+            let display = document.getElementById('display');
+            if (display.innerText === '0' && value !== '.') {
+                display.innerText = value;
+            } else {
+                display.innerText += value;
+            }
+        }
+
+        function calculateResult() {
+            let display = document.getElementById('display');
+            try {
+                display.innerText = eval(display.innerText);
+            } catch {
+                display.innerText = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

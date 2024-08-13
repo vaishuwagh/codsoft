@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #003366; /* Dark Blue */
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6600; /* Orange */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .about h2 {
+            margin-bottom: 0.5rem;
+            color: #003366;
+        }
+
+        .skills ul, .projects ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .skills li, .projects li {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 200px;
+            text-align: center;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .skills li:hover, .projects li:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.03);
+        }
+
+        .projects img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .projects img:hover {
+            transform: scale(1.05);
+        }
+
+        .resume a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #ff6600; /* Orange */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        .resume a:hover {
+            background: #cc5200; /* Darker Orange */
+        }
+
+        .contact {
+            background: #003366; /* Dark Blue */
+            color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background: #003366; /* Dark Blue */
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin-bottom: 0.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>wagh vaishali</h1>
+        <p>Web Developer | Designer</p>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="container about">
+        <img src="your-image.jpg" alt="Your Photo">
+        <h2>About Me</h2>
+        <p>Hi! I'm vaishali wagh, a passionate web developer with experience in creating responsive and user-friendly websites. My expertise includes front-end development, UI/UX design, and backend integration.</p>
+    </section>
+
+    <section id="skills" class="container skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>UI/UX Design</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="container projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <img src="project1.jpg" alt="Project 1">
+                <h3>calculator</h3>
+                <p>A this calculator is created using html,css,javascript.</p>
+            </li>
+            <li>
+                <img src="project2.jpg" alt="Project 2">
+                <h3>landing page</h3>
+                <p>A landing page, it is created using html,css,javascript.</p>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section id="resume" class="container resume">
+        <h2>Resume</h2>
+        <a href="resume.pdf" download>Download My Resume</a>
+    </section>
+
+    <section id="contact" class="container contact">
+        <h2>Contact</h2>
+        <p>Email: waghvaishali1227.com</p>
+        <p>Phone: 7249333115</p>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 John Doe. All rights reserved.</p>
+    </footer>
+</body>
+</html>
